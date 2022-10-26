@@ -14,16 +14,16 @@ const rest = new REST({ version: '10' }).setToken(token);
 
 (async () => {
 	try {
-		console.log(`Started refreshing ${commands.length} application (/) commands.`);
+		console.log(`Laster ${commands.length} av botens slash kommandoer.`);
 
 		const data = await rest.put(
 			Routes.applicationGuildCommands(clientId, guildId),
 			{ body: commands },
 		);
 
-		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+		console.log(`Ferdig lastet ${data.length} av botens slash kommandoer.`);
 	} catch (error) {
-		// And of course, make sure you catch and log any errors!
+
 		console.error(error);
 	}
 })();

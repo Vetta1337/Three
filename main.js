@@ -26,7 +26,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	const command = interaction.client.commands.get(interaction.commandName);
 
 	if (!command) {
-		console.error(`No command matching ${interaction.commandName} was found.`);
+		console.error(`Ingen kommand med navnet ${interaction.commandName} ble funnet.`);
 		return;
 	}
 
@@ -39,7 +39,7 @@ client.on(Events.InteractionCreate, async interaction => {
 });
 
 client.once(Events.ClientReady, c => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
+	console.log(`Innlogget som ${c.user.tag}`);
 });
 
 client.login(token);
