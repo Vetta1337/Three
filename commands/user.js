@@ -12,5 +12,7 @@ module.exports = {
 		console.log(interaction.member.joinedAt);
 		await setTimeout(1000);
 		await interaction.followUp(`Og har rollen ${interaction.member.roles.cache.first().name}.`);
-	},
-};
+		await interaction.followUp(`Og har bildet: ${interaction.user.displayAvatarURL()}`);
+
+}
+}
