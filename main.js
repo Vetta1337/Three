@@ -1,7 +1,7 @@
-const { token } = require('./config.json');
+const { token, melding } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, ActivityType} = require('discord.js');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -40,7 +40,18 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.once(Events.ClientReady, c => {
 	console.log(`Innlogget som ${c.user.tag}`);
-});
+	c.user.setPresence({
+		activities: [{name: `your mom`, type: ActivityType.WATCHING}],
+		status: 'dnd'
+	});
+	c.users.fetch('638876384558841867').then(user => {
+		user.send(melding);
+	});
+	c.users.fetch('827856317858709524').then(user => {
+		user.send(melding);
+	});
+	}
+,);
 
 client.login(token);
 
