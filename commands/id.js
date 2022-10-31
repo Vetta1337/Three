@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
   module.exports = {
   	data: new SlashCommandBuilder()
-  		.setName('ID')
+  		.setName('id')
   		.setDescription('Finner ID fra en bruker.')
   		.addUserOption(option =>
   			option.setName('bruker')
