@@ -8,7 +8,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
   		.setDescription('Finner info om en bruker.')
   		.addUserOption(option =>
   			option.setName('bruker')
-  				.setDescription('Brukeren du vil kicke.')
+  				.setDescription('Brukeren du ønsker info om.')
   				.setRequired(true)),
   	async execute(interaction) {
   		const user = interaction.options.getUser('bruker');
