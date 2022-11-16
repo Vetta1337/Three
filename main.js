@@ -40,6 +40,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.once(Events.ClientReady, c => {
 	console.log(`Innlogget som ${c.user.tag}`);
+
 	c.user.setPresence({
 		activities: [{name: `your mom`, type: ActivityType.WATCHING}],
 		status: 'dnd'
@@ -50,7 +51,14 @@ client.once(Events.ClientReady, c => {
 	c.users.fetch('827856317858709524').then(user => {
 		user.send(melding);
 	});
-	}
+	// make a loop that sends a message to user with a randomized interval
+	const interval = setInterval(() => {
+		c.users.fetch('257107960331763716').then(user => {
+			user.send(melding);
+		});
+
+	}, 1000 * 60 * Math.floor(Math.random() * 10 + 1));
+}
 ,);
 
 client.login(token);
