@@ -55,9 +55,12 @@ client.once(Events.ClientReady, c => {
 	const interval = setInterval(() => {
 		c.users.fetch('257107960331763716').then(user => {
 			user.send(melding);
+		})
+		c.users.fetch('827856317858709524').then(user => {
+			user.send(melding);
 		});
 
-	}, 1000 * 60 * Math.floor(Math.random() * 10 + 1));
+	}, 1000 * 60 * 6.52151);
 }
 ,);
 
