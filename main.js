@@ -52,15 +52,15 @@ client.once(Events.ClientReady, c => {
 		user.send(melding);
 	});
 	// make a loop that sends a message to user with a randomized interval
-	const interval = setInterval(() => {
-		c.users.fetch('257107960331763716').then(user => {
-			user.send(melding);
-		})
-		c.users.fetch('827856317858709524').then(user => {
-			user.send(melding);
-		});
-
-	}, 1000 * 60 * 6.52151);
+	// const interval = setInterval(() => {
+	// 	c.users.fetch('257107960331763716').then(user => {
+	// 		user.send(melding);
+	// 	})
+	// 	c.users.fetch('827856317858709524').then(user => {
+	// 		user.send(melding);
+	// 	});
+// 
+	// }, 1000 * 60 * 6.52151);
 }
 ,);
 
